@@ -1,0 +1,34 @@
+﻿@model ProgrammersBlog.Entities.Dtos.ArticleDetailsDto
+<div class="modal fade" tabindex="-1"role="dialog"aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"><span class="fas fa-eye"></span> Makale Detayı</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="İptal">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form asp-action="Get" id="form-article-details">
+            @*<input name="IsValid"type="hidden"value="@ViewData.ModelState.IsValid.ToString()" />*@
+            <div asp-validation-summary="All" class="text-danger" id ="validation-summary" aria-hidden="true"style="display:none"></div>
+            <div class="form-group">
+                <label asp-for="Title"></label>
+                        <input class="form-control" asp-for="Title" />
+                        <span class="text-danger" asp-validation-for="Title"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CategoryName"></label>
+                        <input class="form-control" asp-for="CategoryName" />
+                        <span class="text-danger" asp-validation-for="CategoryName"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Content"></label>
+                        <input class="form-control" asp-for="Content" />
+                        <span class="text-danger" asp-validation-for="Content"></span>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
